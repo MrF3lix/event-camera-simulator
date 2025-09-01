@@ -48,6 +48,7 @@ class SceneVideoOnly():
     def render(self, step=0):
         self.logger.debug(f"Render Frame: {step}/{self.cfg.render.steps}")
 
+        bpy.context.scene.frame_set(step)
         self.camera.update_position(step)
         self.lidar.update_position(step)
         self.mavic.update_position(step)
